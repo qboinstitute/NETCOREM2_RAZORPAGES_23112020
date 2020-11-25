@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+
+    <input type="text" name="Correo" placeholder="Ingrese su correo" />
+    <input type="text" name="Clave" placeholder="Ingrese su clave" />
+    <input type="submit" value="ENVIAR" />
+
+</form>
+
+<form method="post">
+
+    <input type="text" name="Correo" placeholder="Ingrese su correo" />
+    <input type="text" name="Clave" placeholder="Ingrese su clave" />
+    <input type="submit" value="ENVIAR" asp-page-handler="Autenticacion" />
+
+</form>
+
+
+<ul>
+    @foreach (var item in Model.productos)
+    {
+        <li>@item.Id</li>
+        <li>@item.Descripcion</li>
+        <li>@item.Precio</li>
+    }
+</ul>
